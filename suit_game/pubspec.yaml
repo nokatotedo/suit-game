@@ -38,6 +38,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons:
+    git:
+      url: https://github.com/Davenchy/flutter_launcher_icons.git
+      ref: fixMinSdkParseFlutter2.8
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -63,8 +67,7 @@ flutter:
     - assets/batu.png
     - assets/gunting.png
     - assets/kertas.png
-    - assets/amazing.png
-    - assets/cool.png
+    - assets/poin.png
     - assets/suitjepang.png
     - assets/suitsatukosong.png
   #   - images/a_dot_ham.jpeg
@@ -94,3 +97,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/judul.png"
+  remove_alpha_ios: true
