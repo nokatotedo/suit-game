@@ -28,6 +28,7 @@ class _SatuKosongState extends State<SatuKosong> {
   String yourFirstSuit = "assets/batu.png";
   String yourSecondSuit = "assets/batu.png";
   String hasil = "Mulai bermain!";
+  String yourPoin = "";
   AssetImage showMyFirstSuit = const AssetImage("assets/batu.png");
   AssetImage showMySecondSuit = const AssetImage("assets/batu.png");
   AssetImage showYourFirstSuit = const AssetImage("assets/batu.png");
@@ -126,11 +127,15 @@ class _SatuKosongState extends State<SatuKosong> {
       showYourFirstSuit = AssetImage(yourFirstSuit);
       showYourSecondSuit = AssetImage(yourSecondSuit);
 
+      var randomPoin = random.nextInt(5);
+      yourPoin = "Jumlah Poin Lawan : " + randomPoin.toString();
       var totalPoin = i + randomNumber;
       if (jumlahPoin == totalPoin.toString()) {
         hasil = "Menang";
-      } else if (jumlahPoin != totalPoin.toString()) {
+      } else if (randomPoin.toString() == totalPoin.toString()) {
         hasil = "Kalah";
+      } else if (jumlahPoin != totalPoin.toString()) {
+        hasil = "Coba Lagi";
       }
     });
   }
@@ -141,6 +146,10 @@ class _SatuKosongState extends State<SatuKosong> {
       Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(hasil,
             style: const TextStyle(fontFamily: 'Gothamic', fontSize: 20)),
+        Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: Text(yourPoin,
+                style: const TextStyle(fontFamily: 'Gothamic', fontSize: 20))),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
               height: yourHeight1,
